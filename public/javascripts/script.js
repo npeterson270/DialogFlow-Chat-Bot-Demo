@@ -5,6 +5,10 @@ const socket = io();
 recognition.lang = 'en-US';
 recognition.interimResults = false;
 
+document.addEventListener("DOMContentLoaded", function() {
+    openTab("voice_recognition_tab", "Voice_Recognition");
+});
+
 document.querySelector('button').addEventListener('click', () => {
     recognition.start();
 });
@@ -36,4 +40,18 @@ function synthVoice(text) {
     {
         notice.innerText = 'Unfortunately your browser doesn’t support this speak feature.';
     }
+}
+
+function openTab(tabButton, tabName) {
+    let tabContent = document.getElementsByClassName("tabcontent");
+    for (let i = 0; i < tabContent.length; i++) {
+        tabContent[i].style.display = "none";
+    }
+    let element = document.getElementsByClassName("tablinks active")[0];
+    if (element) {
+        element.className = "tablinks";
+    }
+    let currentTab = document.getElementById(tabName);
+    currentTab.style.display = "block";
+    document.getElementById(tabButton.id).className += " active";
 }

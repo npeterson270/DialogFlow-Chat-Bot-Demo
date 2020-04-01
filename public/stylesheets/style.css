@@ -9,6 +9,7 @@ body {
   font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
   font-weight: 300;
   background: #f7f7f7 url(../images/geometry.png) 0 0 no-repeat;
+  /* background: #cccccc;*/
   background-size: cover;
   color: #333;
 }
@@ -43,7 +44,48 @@ section {
   margin: 1.5em auto;
   width: 400px;
 }
-button {
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+iframe {
+  text-align: center;
+}
+
+speechButton {
   display: block;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -61,19 +103,19 @@ button {
   will-change: transform, filter;
   transition: all 0.3s ease-out;
 }
-button .fa {
+speechButton .fa {
   font-size: 130px;
   line-height: 200px;
   margin: 0;
   text-shadow: 1px 2px 2px #2a8b90;
 }
-button:hover {
+speechButton:hover {
   transform: scale(.92);
 }
-button:active {
+speechButton:active {
   filter: brightness(.8);
 }
-button:focus {
+speechButton:focus {
   outline: 0;
 }
 

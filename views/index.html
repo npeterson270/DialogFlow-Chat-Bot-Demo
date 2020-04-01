@@ -13,17 +13,41 @@
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" >
 </head>
 <body>
-<section>
-    <h1>Simple AI Bot</h1>
-    <h2>with Web Speech API</h2>
+<div class="tab">
+    <button id="voice_recognition_tab" class="tablinks active" onclick="openTab(this, 'Voice_Recognition')">Voice Recognition</button>
+    <button id ="chat_ui_tab", class="tablinks" onclick="openTab(this, 'Chat_UI')">Chat UI</button>
+</div>
 
-    <button><i class="fa fa-microphone"></i></button>
+<div id="Voice_Recognition", class="tabcontent">
+<section>
+    <!--<h1>Simple AI Bot</h1>
+    <h2>with Web Speech API</h2>-->
+
+    <speechButton><i class="fa fa-microphone"></i></speechButton>
 
     <div>
         <p>You said: <em class="output-you">...</em></p>
         <p>Bot replied: <em class="output-bot">...</em></p>
     </div>
-</section>
+    </section>
+</div>
+
+<div id="Chat_UI", class="tabcontent">
+    <!--<h1>Chat UI</h1>-->
+    <section>
+<iframe
+    allow="microphone;"
+    width="350"
+    height="430"
+    src="https://console.dialogflow.com/api-client/demo/embedded/28a0fa11-1bdd-42de-8560-865486759fc8">
+</iframe>
+    </section>
+
+</div>
+
+
+</body>
+</html>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.1/socket.io.js"></script>
 <script src="/javascripts/script.js"></script>
